@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Mibo</string>
+    <string name="title_activity_mibo_main">MiboMainActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>
