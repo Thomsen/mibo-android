@@ -11,10 +11,34 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    signingConfigs {
+        release {
+//            keytool -genkey -v -keystore mibo.keystore -alias mb -keyalg RSA -keysize 2048 -validity 43800
+            storeFile file("mibo.keystore")
+            storePassword "miboandroid"
+            keyAlias "mb"
+            keyPassword "miboandroid"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    productFlavors {
+        demo {
+            applicationId "com.anyuaning.mibo.demo"
+            versionName "1.0.0-demo"
+        }
+
+        full {
+            applicationId "com.anyuaning.mibo.full"
+            versionName "1.0.0-full"
         }
     }
 }
