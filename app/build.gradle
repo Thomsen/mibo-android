@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "com.anyuaning.mibo"
@@ -30,15 +30,21 @@ android {
         }
     }
 
+    flavorDimensions "mibo"
+
     productFlavors {
         demo {
             applicationId "com.anyuaning.mibo.demo"
             versionName "1.0.0-demo"
+
+            dimension "mibo"
         }
 
         full {
             applicationId "com.anyuaning.mibo.full"
             versionName "1.0.0-full"
+
+            dimension "mibo"
         }
     }
 }
